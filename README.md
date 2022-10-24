@@ -17,7 +17,7 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
 [Evaluation of your app across the following attributes]
 - **Category:** Transportation/Enviroment/Goal
 - **Mobile:** This app would be primarily developed for mobile but would perhaps be just as viable on a computer or smart watch. 
-- **Story:** Calculates user's emission and summerizes users emission pattern. allows user to set goal and track their carbon emission to make sure they are under. 
+- **Story:** Calculates user's emission and summerizes users emission pattern. Allows user to set goal and track their carbon emission to make sure they are under. 
 - **Market:** Vehicle owners in particular but anyone can use it
 - **Habit:** Users would preferably enter every time they travelled
 - **Scope:** Calculate users emission and give emission summary. Then perhaps integrate with maps/directions apps such as google maps, apple map or waze to reduece carbon emission.
