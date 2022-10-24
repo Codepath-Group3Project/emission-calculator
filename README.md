@@ -11,15 +11,15 @@ Emissi0n - README
 
 ## Overview
 ### Description
-Estimates carbon emission based on vehicle type and distance travelled to reduce global warming.
+Estimates carbon emission based on vehicle type and distance travelled to reduce global warming and helps user set goal to reduce their carbon emission.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:** Transportation/Enviroment
+- **Category:** Transportation/Enviroment/Goal
 - **Mobile:** This app would be primarily developed for mobile but would perhaps be just as viable on a computer or smart watch. 
-- **Story:** calculates user's emission and summerizes users emission pattern
-- **Market:** vehicle owners in particular but anyone can use it
-- **Habit:** users would preferably enter every time they travelled
+- **Story:** Calculates user's emission and summerizes users emission pattern. allows user to set goal and track their carbon emission to make sure they are under. 
+- **Market:** Vehicle owners in particular but anyone can use it
+- **Habit:** Users would preferably enter every time they travelled
 - **Scope:** Calculate users emission and give emission summary. Then perhaps integrate with maps/directions apps such as google maps, apple map or waze to reduece carbon emission.
 
 ## Product Spec
@@ -28,10 +28,10 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
 
 **Required Must-have Stories**
 
-* User login page
+* User sign up/login page 
 * Profile page 
-    * emission history
-    * personal information (i.e. car type)
+    * Emission history
+    * Personal information (i.e. car type)
 * Calculator page
     * User enters information 
 * Results page
@@ -39,9 +39,10 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
 **Optional Nice-to-have Stories**
 
 * Alternative transportation methods
-    * calculate emissions saved (e.g., biking, carpool, public transportation)
+    * Calculate emissions saved (e.g., biking, carpool, public transportation)
 * Various vehicles to choose from (make/model)
 * GPS logs distance traveled (no need for input, calculation is automatic)
+* Feed to share their progress in their goal to with other user
 * TBD . . .
 
 ### 2. Screen Archetypes
@@ -50,37 +51,43 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
    * User enters their login credentials
    * Once logged in, they will automatically be sent to the home screen upon opening the app 
 * Register
-   * User will register and create an account
-* Weekly Summary
+   * User will register, enter vehicle info, their goal and create an account
+* Calculator/ Weekly Summary
    * Displays report on this weeks emissions
-   * Daily emissions
-   * total emissions for the week
-* History Screen
-   * Displays history of emissions
-   * Daily emissions
-* Calculator page
-    * User enters information 
-        * select vehicle type (electric, sedan, suv, etc.)
+      * avg emissions for the week
+      * min emissions for the week
+      * max emissions for the week
+      * total emissions for the week
+   * User enters information 
+        * date
         * enter milage traveled
-* Results page
-    * displays the calculated emissions result
-
+* History 
+   * Displays history of emissions
+       * date 
+       * distance travelled
+       * total emmision for that ride
+* Goal Progress 
+    * Graphic display of how well user is doing on their set monthly progress
+    * How many months they met their goal
+    * Update the goal
+* Update Goal
+    * Enter new goal
 
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* login/register
-* Add a vehicle
+* homepage 
 * History
+* goal progress
 
 **Flow Navigation** (Screen to Screen)
 
 * Forced login, otherwise account creation
-* Jumps to weekly summary
-   * can go to history from this page
-   * can also go to login/register page
+   * Jumps to home page
+* Goals Progress page
+   * Can go to update page  
 
 ## Wireframes
 <img src="Emissi0n wireframe.png" width=600>
