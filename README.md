@@ -91,7 +91,46 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+#### User
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | userId        | String   | unique id of the user (default field) |
+   | userName      | String   | username to login |
+   | password      | String   | password to login |
+   | first         | String   | User first name | 
+   | last          | String   | User last name | 
+
+#### Vehicle
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | vehicleId     | String   | unique id for the vehicle (default field) |
+   | userId        | String   | unique id of the user who owns the vehicle |
+   | make          | String   | make of the vehicle |
+   | model         | String   |  model of the vehicle | 
+   | year          | Number   | year the vehicle was made | 
+
+#### Goal
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | goalId        | String   | unique id for the goal (default field) |
+   | userId        | String   | unique id of the user |
+   | month         | String   | month that the goal applies to |
+   | emissionGoal  | Number   |  emission goal set by the user  | 
+   
+#### VehicleEmission
+
+   | Property           | Type     | Description |
+   | ------------------ | -------- | ------------|
+   | vehicleEmissionId | String   | unique id for the vehicle emission (default field) |
+   | userId             | String   | unique id of the user |
+   | vehicleId          | String   | id of the vehicle |
+   | distance           | Number   | distance traveled  |
+   | emission           | Number   | emissions resulting from travel |
+   | date               | DateTime | date of the vehicle emission | 
+   
 ### Models
 [Add table of models]
 ### Networking
