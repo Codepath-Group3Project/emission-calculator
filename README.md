@@ -97,6 +97,7 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
 ### [BONUS] Interactive Prototype
 
 ## Schema 
+### Models
 #### User
 
    | Property      | Type     | Description |
@@ -137,8 +138,6 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
    | emission           | Number   | emissions resulting from travel |
    | date               | DateTime | date of the vehicle emission | 
    
-### Models
-[Add table of models]
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
