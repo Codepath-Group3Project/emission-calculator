@@ -139,6 +139,19 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
    | date               | DateTime | date of the vehicle emission | 
    
 ### Networking
-- [Add list of network requests by screen ]
+- Login
+    - (Read/GET) Ensure user is in User table
+- Register 
+    - (Create/POST) Create new user object
+    - (Create/POST) Create new vehicle object
+- Calculator/ Weekly Summary    
+    - (Create/POST) Create new vehicle emission
+    - (Read/GET) Vehicle emission data for the week
+- History 
+    - (Read/GET) Vehicle emission data for the week
+- Goal Progress 
+    - (Read/GET) Vehicle emission goal for the month
+- Update Goal
+    - (Create/POST) Create/update goals for each month
+    
 - [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
