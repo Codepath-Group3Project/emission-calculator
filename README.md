@@ -105,8 +105,6 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
    | userId        | String   | unique id of the user (default field) |
    | userName      | String   | username to login |
    | password      | String   | password to login |
-   | first         | String   | User first name | 
-   | last          | String   | User last name | 
 
 #### Vehicle
 
@@ -139,14 +137,48 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
    | date               | DateTime | date of the vehicle emission | 
    
 ### Networking
-- Login
-    - (Read/GET) Ensure user is in User table
 - Register 
     - (Create/POST) Create new user object
+    ```swift 
+    let user = PFObject(className:"User")
+    user["userName"] = "Michael Scott"
+    user["password"] = "paper"
+    user.saveInBackground { (succeeded, error)  in
+        if (succeeded) {
+            print("The object has been saved.")
+        } else {
+            print(error)
+        }
+    }
+    ```
     - (Create/POST) Create new vehicle object
+    ```swift 
+    let vehicle = PFObject(className:"Vehicle")
+    vehicle["userId"] = "MichaelScott1"
+    vehicle["make"] = "GMC"
+    vehicle["model"] = "Hummer"
+    vehicle["year"] = "2022"
+    vehicle.saveInBackground { (succeeded, error)  in
+        if (succeeded) {
+            print("The object has been saved.")
+        } else {
+            print(error)
+        }
+    }
+    ```
+    
 - Calculator/ Weekly Summary    
     - (Create/POST) Create new vehicle emission
     - (Read/GET) Vehicle emission data for the week
+    ```swift
+    let query = PFQuery(className:"VehicleEmission")
+    query.whereKey("userId", equalTo: currentUser)
+    query.findObjectsInBackground { (emissions: [PFObject]?, error: Error?) in
+    if let error = error { 
+        print(error.localizedDescription)
+    } else if let emissions = emisssions {
+        print("Successfully retrieved \(emissions.count) emissions.")
+    ```
 - History 
     - (Read/GET) Vehicle emission data for the week
 - Goal Progress 
