@@ -169,6 +169,22 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
     
 - Calculator/ Weekly Summary    
     - (Create/POST) Create new vehicle emission
+    ```swift 
+    let emission = PFObject(className:"VehicleEmission")
+    emission["userId"] = currentUser
+    emission["vehicleId"] = currentUser.vehicleId
+    emission["date"] = emissionForm.date
+    emission["distance"] = emissionForm.distance 
+    emission["emission"] = emissionCalculation(make, model, year, emissionForm.distance) // we will have to create a function emissionCalculation that takes these parameters, makes an API request, and outputs the emission
+
+    emission.saveInBackground { (succeeded, error)  in
+        if (succeeded) {
+            print("The object has been saved.")
+        } else {
+            print(error)
+        }
+    }
+    ```
     - (Read/GET) Vehicle emission data for the week
     ```swift
     let query = PFQuery(className:"VehicleEmission")
@@ -181,9 +197,38 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
     ```
 - History 
     - (Read/GET) Vehicle emission data for the week
+    ```swift
+    let query = PFQuery(className:"VehicleEmission")
+    query.whereKey("userId", equalTo: currentUser)
+    query.findObjectsInBackground { (emissions: [PFObject]?, error: Error?) in
+    if let error = error { 
+        print(error.localizedDescription)
+    } else if let emissions = emisssions {
+        print("Successfully retrieved \(emissions.count) emissions.")
+    ```
 - Goal Progress 
     - (Read/GET) Vehicle emission goal for the month
+    ```swift
+    let query = PFQuery(className:"Goal")
+    query.whereKey("userId", equalTo: currentUser)
+    query.findObjectsInBackground { (goals: [PFObject]?, error: Error?) in
+    if let error = error { 
+        print(error.localizedDescription)
+    } else if let emissions = emisssions {
+        print("Successfully retrieved \(goals.count) goals.")
+    ```
 - Update Goal
     - (Create/POST) Create/update goals for each month
-    
-- [Create basic snippets for each Parse network request]
+    ```swift 
+    let goal = PFObject(className:"Goal")
+    goal["userId"] = currentUser
+    goal["month"] = emissionForm.month
+    goal["emissionGoal"] = emissionForm.emissionGoal
+    goal.saveInBackground { (succeeded, error)  in
+        if (succeeded) {
+            print("The object has been saved.")
+        } else {
+            print(error)
+        }
+    }
+    ```
