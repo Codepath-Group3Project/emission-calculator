@@ -78,14 +78,15 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
 
 **Tab Navigation** (Tab to Screen)
 
-* homepage 
+* calculator page 
 * History
 * goal progress
 
 **Flow Navigation** (Screen to Screen)
 
-* Forced login, otherwise account creation
-   * Jumps to home page
+* Forced login
+   * goes to sign up page
+   * goes to sign page
 * Goals Progress page
    * Can go to update page  
 
@@ -93,6 +94,9 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
 <img src="Emissi0n wireframe.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="Sign In:Up.png" width=600>     <img src="Sign Up.png" width=600>     <img src="Sign In.png" width=600> 
+<img src="caculator.png" width=600>     <img src="History.png" width=600>      <img src="Goal Progress.png" width=600>
+<img src="Goal Update.png" width=600>  
 
 ### [BONUS] Interactive Prototype
 
