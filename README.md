@@ -94,9 +94,9 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
 <img src="Emissi0n wireframe.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img src="Sign In_Up.png" width=200>     <img src="Sign Up.png" width=200>     <img src="Sign In.png" width=200> 
-<img src="caculator.png" width=200>     <img src="History.png" width=200>      <img src="Goal Progress.png" width=200>
-<img src="Goal Update.png" width=200>  
+<img src="Sign In_Up.png" width=100>     <img src="Sign Up.png" width=100>     <img src="Sign In.png" width=100> 
+<img src="caculator.png" width=100>     <img src="History.png" width=100>      <img src="Goal Progress.png" width=100>
+<img src="Goal Update.png" width=100>  
 
 ### [BONUS] Interactive Prototype
 
