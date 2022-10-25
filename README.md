@@ -99,6 +99,7 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
 <img src="Goal Update.png" width=100>  
 
 ### [BONUS] Interactive Prototype
+<img src='Emissi0nInteractivePrototype.gif' title='Emissi0nInteractivePrototype.gif' width='' alt='Emissi0nInteractivePrototype.gif' />
 
 ## Schema 
 ### Models
