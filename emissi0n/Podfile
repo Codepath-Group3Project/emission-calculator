@@ -7,5 +7,6 @@ target 'emissi0n' do
 
   # Pods for emissi0n
   pod 'AlamofireImage'
+  pod 'Parse'
 
 end
