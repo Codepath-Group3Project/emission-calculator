@@ -35,10 +35,16 @@ class SignInViewController: UIViewController {
         }
     }
     
+    
     @IBAction func onSignUp(_ sender: Any) {
         // open sign up page
         self.performSegue(withIdentifier: "signUpSegue", sender: nil)
     }
+    
+//    @IBAction func onSignUp(_ sender: Any) {
+//        // open sign up page
+//        self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+//    }
     /*
     // MARK: - Navigation
 

@@ -20,13 +20,27 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
+    
     @IBAction func onSignUpButton(_ sender: Any) {
+        let user = PFUser()
+        user.username = usernameField.text
+        user.password = passwordField.text
+        user["make"] = makeField.text
+        user["model"] = modelField.text
+        user["year"] = yearField.text
+        user["limit"] = limitField.text
         
-        
+        user.signUpInBackground { (success, error) in
+            if success {
+                self.performSegue(withIdentifier: "loginSegue2", sender: nil)
+            } else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+            }
+        }
     }
     
     @IBAction func onSignInButton(_ sender: Any) {
@@ -35,27 +49,17 @@ class SignUpViewController: UIViewController {
     }
     
     
-    //    let user = PFUser()
-//    user.username = usernameField.text
-//    user.password = passwordField.text
-//
-//    user.signUpInBackground { (success, error) in
-//        if success {
-//            self.performSegue(withIdentifier: "loginSegue", sender: nil)
-//        } else {
-//            print("Error: \(String(describing: error?.localizedDescription))")
-//        }
-//    }
+   
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
