@@ -11,14 +11,31 @@ import SwiftUI
 import Parse
 
 class SignUpViewController: UIViewController {
-
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var makeField: UITextField!
+    @IBOutlet weak var modelField: UITextField!
+    @IBOutlet weak var yearField: UITextField!
+    @IBOutlet weak var limitField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-//    let user = PFUser()
+    @IBAction func onSignUpButton(_ sender: Any) {
+        
+        
+    }
+    
+    @IBAction func onSignInButton(_ sender: Any) {
+        // open sign in page
+        self.performSegue(withIdentifier: "signInSegue", sender: nil)
+    }
+    
+    
+    //    let user = PFUser()
 //    user.username = usernameField.text
 //    user.password = passwordField.text
 //
