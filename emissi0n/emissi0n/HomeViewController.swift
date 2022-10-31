@@ -20,10 +20,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("View loaded")
-        print("trying to get vehicle makes")
         
 //        getVehicleMakes()
+        getVehicleModel()
     }
     
     // what I need to create:
