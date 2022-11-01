@@ -53,8 +53,8 @@ func getVehicleModel(modelId: String = "2b1d0cd5-59be-4010-83b3-b60c5e5342da") {
                 print(error.localizedDescription)
          }
         
-//        let code = response as! HTTPURLResponse
-//        print("Code: \(code.statusCode)")
+        let code = response as! HTTPURLResponse
+        print("Code: \(code.statusCode)")
              
         guard let data = data else {return}
         let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String:Any]]

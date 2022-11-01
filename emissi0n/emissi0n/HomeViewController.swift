@@ -13,6 +13,12 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var datePicked: UIDatePicker!
     @IBOutlet weak var distanceTraveledInput: UITextField!
+    @IBOutlet weak var makeLabel: UILabel!
+    @IBOutlet weak var modelLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    
+    
+    
     
     
     
@@ -22,8 +28,13 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         
 //        getVehicleMakes()
-        getVehicleModel()
+        let currentUser = PFUser.current()
+        makeLabel.text = currentUser?["make"] as! String
+        modelLabel.text = currentUser?["model"] as! String
+        yearLabel.text = currentUser?["year"] as! String
+        
     }
+    
     
     // what I need to create:
     // elements in storyboard
@@ -36,7 +47,7 @@ class HomeViewController: UIViewController {
 
         // calculate emission based on distance & vehicle
         print("Pressed Submit")
-        getVehicleMakes()
+//        getVehicleModel()
         
         
         // create parse table for emissionsVehicle

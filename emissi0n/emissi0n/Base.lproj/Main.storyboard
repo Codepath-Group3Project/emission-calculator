@@ -153,6 +153,31 @@
                                     <action selector="onEmissionSubmit:" destination="age-ob-qW8" eventType="touchUpInside" id="EBx-1V-Cjb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sou-Ou-4mf">
+                                <rect key="frame" x="55" y="155" width="51" height="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5h-6i-iWR">
+                                <rect key="frame" x="112" y="155" width="59" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDk-wY-kbI">
+                                <rect key="frame" x="177" y="155" width="42" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ8-33-5mG">
+                                <rect key="frame" x="55.000000000000014" y="71.666666666666671" width="149.33333333333337" height="38.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gTy-1S-9k0"/>
                         <color key="backgroundColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -160,14 +185,23 @@
                             <constraint firstItem="vbS-cf-Zve" firstAttribute="leading" secondItem="aQO-Nb-wLj" secondAttribute="trailing" constant="8" symbolic="YES" id="7H8-7F-xGd"/>
                             <constraint firstItem="zHP-9F-tLm" firstAttribute="top" secondItem="M23-P8-UNZ" secondAttribute="bottom" constant="8" id="8GK-qw-qya"/>
                             <constraint firstItem="aQO-Nb-wLj" firstAttribute="top" secondItem="gTy-1S-9k0" secondAttribute="top" constant="106" id="CN4-zI-etj"/>
+                            <constraint firstItem="FDk-wY-kbI" firstAttribute="leading" secondItem="C5h-6i-iWR" secondAttribute="trailing" constant="6" id="Ex7-Am-SMY"/>
+                            <constraint firstItem="SJ8-33-5mG" firstAttribute="leading" secondItem="gTy-1S-9k0" secondAttribute="leading" constant="55" id="MwE-it-wLU"/>
+                            <constraint firstItem="sou-Ou-4mf" firstAttribute="top" secondItem="SJ8-33-5mG" secondAttribute="bottom" constant="45" id="Ov9-nx-s4I"/>
                             <constraint firstItem="gTy-1S-9k0" firstAttribute="trailing" secondItem="zHP-9F-tLm" secondAttribute="trailing" constant="72" id="RNA-r5-L4O"/>
                             <constraint firstItem="aQO-Nb-wLj" firstAttribute="leading" secondItem="gTy-1S-9k0" secondAttribute="leading" constant="55" id="S3w-Gd-xOc"/>
                             <constraint firstItem="zHP-9F-tLm" firstAttribute="leading" secondItem="gTy-1S-9k0" secondAttribute="leading" constant="72" id="VYO-Js-ca6"/>
                             <constraint firstItem="vbS-cf-Zve" firstAttribute="top" secondItem="gTy-1S-9k0" secondAttribute="top" constant="99" id="XAH-Gj-TZd"/>
                             <constraint firstItem="zHP-9F-tLm" firstAttribute="top" secondItem="M23-P8-UNZ" secondAttribute="bottom" constant="8" id="aa2-4k-qEx"/>
                             <constraint firstItem="gTy-1S-9k0" firstAttribute="trailing" secondItem="M23-P8-UNZ" secondAttribute="trailing" constant="55" id="cBm-Cv-MIq"/>
+                            <constraint firstItem="FDk-wY-kbI" firstAttribute="top" secondItem="SJ8-33-5mG" secondAttribute="bottom" constant="45" id="eRE-6L-ZmY"/>
+                            <constraint firstItem="gTy-1S-9k0" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SJ8-33-5mG" secondAttribute="trailing" constant="95" id="gAT-UP-TZt"/>
                             <constraint firstItem="M23-P8-UNZ" firstAttribute="leading" secondItem="gTy-1S-9k0" secondAttribute="leading" constant="55" id="gFH-wc-BcC"/>
+                            <constraint firstItem="aQO-Nb-wLj" firstAttribute="top" secondItem="sou-Ou-4mf" secondAttribute="bottom" constant="15" id="h5X-ih-3ch"/>
                             <constraint firstItem="gTy-1S-9k0" firstAttribute="trailing" secondItem="zHP-9F-tLm" secondAttribute="trailing" constant="72" id="jds-yL-gVE"/>
+                            <constraint firstItem="C5h-6i-iWR" firstAttribute="top" secondItem="SJ8-33-5mG" secondAttribute="bottom" constant="45" id="ln8-zd-gHb"/>
+                            <constraint firstItem="C5h-6i-iWR" firstAttribute="leading" secondItem="sou-Ou-4mf" secondAttribute="trailing" constant="6" id="mvS-Aw-DcB"/>
+                            <constraint firstItem="sou-Ou-4mf" firstAttribute="leading" secondItem="gTy-1S-9k0" secondAttribute="leading" constant="55" id="oPN-92-dyF"/>
                             <constraint firstItem="zHP-9F-tLm" firstAttribute="top" secondItem="M23-P8-UNZ" secondAttribute="bottom" constant="8" id="rFV-U5-K3L"/>
                             <constraint firstItem="zHP-9F-tLm" firstAttribute="leading" secondItem="gTy-1S-9k0" secondAttribute="leading" constant="72" id="sw0-bu-wHs"/>
                             <constraint firstItem="M23-P8-UNZ" firstAttribute="top" secondItem="vbS-cf-Zve" secondAttribute="bottom" constant="2" id="yV4-4C-PIE"/>
@@ -177,6 +211,9 @@
                     <connections>
                         <outlet property="datePicked" destination="vbS-cf-Zve" id="JXR-06-FxR"/>
                         <outlet property="distanceTraveledInput" destination="M23-P8-UNZ" id="WIc-h1-Rw3"/>
+                        <outlet property="makeLabel" destination="sou-Ou-4mf" id="FkF-zv-as8"/>
+                        <outlet property="modelLabel" destination="C5h-6i-iWR" id="1Qz-jb-hMa"/>
+                        <outlet property="yearLabel" destination="FDk-wY-kbI" id="z0C-LN-270"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqA-w9-TGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
