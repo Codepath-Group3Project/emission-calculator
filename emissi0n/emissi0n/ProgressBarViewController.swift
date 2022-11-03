@@ -16,75 +16,64 @@ class ProgressBarViewController: UIViewController {
     var total = 0
         
     let label: UILabel = {
-            let label = UILabel()
-            label.textAlignment = .center
-            label.numberOfLines = 0
-            label.font = .systemFont(ofSize: 36)
-            return label
-        }()
+        let label = UILabel()
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 36)
+        return label
+    }()
         
-        override func viewDidLoad() {
-            super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-            limit = 400
-            total = 300
+        limit = 400
+        total = 300
             
-            createCircularProgressBar(limit: CGFloat(limit),total: CGFloat(total))
-        }
+        createCircularProgressBar(limit: CGFloat(limit),total: CGFloat(total))
+    }
         
-        func createCircularProgressBar(limit:CGFloat, total:CGFloat){
-            let center =  view.center
-            label.text = "\(Int(total)) \n out of \n \(Int(limit)) "
-            label.sizeToFit()
-            view.addSubview(label)
-            label.center = center
+    func createCircularProgressBar(limit:CGFloat, total:CGFloat){
+        let center =  view.center
+        label.text = "\(Int(total)) \n out of \n \(Int(limit)) "
+        label.sizeToFit()
+        view.addSubview(label)
+        label.center = center
             
             // create my track layer
             
             
-            let circularPath = UIBezierPath(arcCenter: center, radius: 120, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
-            trackLayer.path = circularPath.cgPath
+        let circularPath = UIBezierPath(arcCenter: center, radius: 120, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        trackLayer.path = circularPath.cgPath
             
-            trackLayer.strokeColor = UIColor.lightGray.cgColor
-            trackLayer.lineWidth = 12
-            trackLayer.fillColor = UIColor.clear.cgColor
-            trackLayer.lineCap = CAShapeLayerLineCap.round
-            view.layer.addSublayer(trackLayer)
+        trackLayer.strokeColor = UIColor.lightGray.cgColor
+        trackLayer.lineWidth = 12
+        trackLayer.fillColor = UIColor.clear.cgColor
+        trackLayer.lineCap = CAShapeLayerLineCap.round
+        view.layer.addSublayer(trackLayer)
             
-            ProgressLayer.path = circularPath.cgPath
+        ProgressLayer.path = circularPath.cgPath
             
-            ProgressLayer.strokeColor = UIColor.green.cgColor
-            ProgressLayer.lineWidth = 12
-            ProgressLayer.fillColor = UIColor.clear.cgColor
-            ProgressLayer.lineCap = CAShapeLayerLineCap.round
+        ProgressLayer.strokeColor = UIColor.green.cgColor
+        ProgressLayer.lineWidth = 12
+        ProgressLayer.fillColor = UIColor.clear.cgColor
+        ProgressLayer.lineCap = CAShapeLayerLineCap.round
             
-            ProgressLayer.strokeEnd = 0.9 - 0.13
+        ProgressLayer.strokeEnd = 0.7 - 0.13
             
-            if (ProgressLayer.strokeEnd > 0.7 ){
-                ProgressLayer.strokeColor = UIColor.red.cgColor
-            } else if (ProgressLayer.strokeEnd > 0.5){
-                ProgressLayer.strokeColor = UIColor.orange.cgColor
-            }else if (ProgressLayer.strokeEnd > 0.4){
-                ProgressLayer.strokeColor = UIColor.yellow.cgColor
-            }
-            
-            view.layer.addSublayer(ProgressLayer)
-            
-            //view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-        
-            
+        if (ProgressLayer.strokeEnd > 0.7 ){
+            ProgressLayer.strokeColor = UIColor.red.cgColor
+        } else if (ProgressLayer.strokeEnd > 0.5){
+            ProgressLayer.strokeColor = UIColor.orange.cgColor
+        }else if (ProgressLayer.strokeEnd > 0.4){
+            ProgressLayer.strokeColor = UIColor.yellow.cgColor
         }
-        
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            
+        view.layer.addSublayer(ProgressLayer)
+            
     }
-    */
-
+    
+    @IBAction func updateButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "updateSegue", sender: nil)
+    }
+        
 }

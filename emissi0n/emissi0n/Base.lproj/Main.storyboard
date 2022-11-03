@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fdW-bH-JVj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kX0-Hr-9k1">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -104,13 +104,13 @@
                     <connections>
                         <outlet property="passwordField" destination="cnT-eS-vzM" id="3NC-Tl-7Ro"/>
                         <outlet property="usernameField" destination="xat-Zt-CJc" id="ENZ-HH-NFh"/>
-                        <segue destination="PZT-kJ-hBL" kind="presentation" identifier="loginSegue" id="sdE-Uh-r8j"/>
+                        <segue destination="kX0-Hr-9k1" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="sdE-Uh-r8j"/>
                         <segue destination="ueo-P4-V1b" kind="presentation" identifier="signUpSegue" id="xQU-k4-lDe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="-697"/>
+            <point key="canvasLocation" x="114" y="-1524"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="TU7-6Y-CnK">
@@ -319,17 +319,18 @@
                         <outlet property="usernameField" destination="L07-xA-fub" id="eqs-z1-Qii"/>
                         <outlet property="yearField" destination="Z2u-lR-oqe" id="wcb-ar-XuQ"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="signInSegue" id="eKo-3v-UtB"/>
-                        <segue destination="PZT-kJ-hBL" kind="presentation" identifier="loginSegue2" id="Tu9-5t-pJL"/>
+                        <segue destination="kX0-Hr-9k1" kind="presentation" identifier="loginSegue2" modalPresentationStyle="fullScreen" id="Tu9-5t-pJL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xX4-8C-e0i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1138" y="-697"/>
+            <point key="canvasLocation" x="1137" y="-1524"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Calculator-->
         <scene sceneID="Lmw-ep-AUL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="PZT-kJ-hBL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calculator" image="calc" selectedImage="tinywow_calculator (1)_7602785" id="wcp-vC-hvy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fmb-f4-DEE">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -342,44 +343,151 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVb-37-7Qs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="93"/>
+            <point key="canvasLocation" x="114" y="92"/>
         </scene>
-        <!--Progress Bar View Controller-->
+        <!--Progress-->
         <scene sceneID="dwQ-bs-HJI">
             <objects>
                 <viewController id="fdW-bH-JVj" customClass="ProgressBarViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wB1-vL-Uj2" customClass="Progre" customModule="emissi0n" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjL-fp-899">
+                                <rect key="frame" x="135.66666666666666" y="609" width="119" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Update Goal"/>
+                                <connections>
+                                    <action selector="updateButton:" destination="fdW-bH-JVj" eventType="touchUpInside" id="nRj-zt-Aio"/>
+                                    <segue destination="MRw-Hc-dIL" kind="presentation" identifier="updateSegue" modalPresentationStyle="fullScreen" id="PFP-bs-biS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LSn-pN-4lS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qjL-fp-899" firstAttribute="centerX" secondItem="wB1-vL-Uj2" secondAttribute="centerX" id="V9N-Jy-TbL"/>
+                            <constraint firstAttribute="bottom" secondItem="qjL-fp-899" secondAttribute="bottom" constant="200" id="WYG-Ms-vu5"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Progress" id="MVU-FM-rDU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkm-av-0UE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="92"/>
+            <point key="canvasLocation" x="1148" y="837"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="B4M-Zw-zf7">
+        <!--Update View Controller-->
+        <scene sceneID="sJw-TM-NuF">
             <objects>
-                <viewController id="YyD-y0-lly" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IDb-5l-oxO">
+                <viewController id="we1-8v-uIC" customClass="UpdateViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BG0-bo-lte">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="DrE-4w-3be"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5L-2E-G6e">
+                                <rect key="frame" x="0.0" y="405" width="390" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oei-4H-DtU">
+                                <rect key="frame" x="156" y="459" width="80" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Update"/>
+                                <connections>
+                                    <action selector="toUpdateBtn:" destination="we1-8v-uIC" eventType="touchUpInside" id="jqt-sb-K19"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hg4-fM-lfc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D5L-2E-G6e" firstAttribute="leading" secondItem="Hg4-fM-lfc" secondAttribute="leading" id="4H7-fA-MGW"/>
+                            <constraint firstItem="D5L-2E-G6e" firstAttribute="centerY" secondItem="BG0-bo-lte" secondAttribute="centerY" id="hHD-SJ-Ifb"/>
+                            <constraint firstItem="Hg4-fM-lfc" firstAttribute="trailing" secondItem="D5L-2E-G6e" secondAttribute="trailing" id="uK6-NJ-7J5"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iU5-ZE-XLS">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="sFR-N2-iTV">
+                            <connections>
+                                <action selector="backButton:" destination="we1-8v-uIC" id="tI8-Az-8v1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="NewGoalTextField" destination="hHD-SJ-Ifb" id="Sbm-Hb-zaD"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hmm-73-6ZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lve-35-gVq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-557" y="-95"/>
+            <point key="canvasLocation" x="1137" y="2323"/>
+        </scene>
+        <!--Progress-->
+        <scene sceneID="xHH-NV-Yp3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mLU-w7-z1s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Progress" selectedImage="tinywow_stats_7602694" id="Yn1-hu-Jsd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="eZf-pT-eQW">
+                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fdW-bH-JVj" kind="relationship" relationship="rootViewController" id="ZoP-64-GFW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jGg-MD-lLf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="92"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UdC-cy-Da1">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kX0-Hr-9k1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HYO-6U-ygw">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PZT-kJ-hBL" kind="relationship" relationship="viewControllers" id="92n-g8-dlJ"/>
+                        <segue destination="mLU-w7-z1s" kind="relationship" relationship="viewControllers" id="qgD-XS-VlE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgd-Yt-WHf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="609" y="-646"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xfW-ty-gAf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MRw-Hc-dIL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U3A-Y5-3Cv">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="we1-8v-uIC" kind="relationship" relationship="rootViewController" id="Ub6-Rq-ou5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TeZ-B5-qZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1147.6923076923076" y="1548.341232227488"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="xQU-k4-lDe"/>
         <segue reference="sdE-Uh-r8j"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="calc" width="128" height="128"/>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="emiss0n-logo" width="360" height="360"/>
+        <image name="tinywow_calculator (1)_7602785" width="30" height="30"/>
+        <image name="tinywow_stats_7602694" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
