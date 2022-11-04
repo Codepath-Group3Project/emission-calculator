@@ -29,13 +29,13 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
 
 **Required Must-have Stories**
 
-[x] User sign up/login page 
-    [x] Personal information (i.e. car type)
-[x] Goal/Limit page 
+- [x] User sign up/login page 
+    * Personal information (i.e. car type)
+- [x] Goal/Limit page 
    * Emission history
-[x] Calculator page
-    [x] User enters information 
-[x] Results displayed
+- [x] Calculator page
+    * User enters information 
+- [x] Results displayed
 
 **Optional Nice-to-have Stories**
 
