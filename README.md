@@ -241,5 +241,5 @@ Estimates carbon emission based on vehicle type and distance travelled to reduce
     
 ## Progress
 ### Sprint 2
-<img src='https://github.com/Codepath-Group3Project/emission-calculator/commit/3730383b8f525e706cbedc7309890a5a3652642d#diff-b21253c22da117d15f667480081830f56bea56f3200e399a5d96d77f8743860c' title='Sprint 2' width='' alt='Sprint2Progress.gif' />
+<img src='https://github.com/Codepath-Group3Project/emission-calculator/blob/3730383b8f525e706cbedc7309890a5a3652642d/sprint2progress.gif' title='Sprint 2' width='' alt='Sprint2Progress.gif' />
     
