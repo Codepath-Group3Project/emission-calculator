@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Parse
 
 class UpdateViewController: UIViewController {
 
-    @IBOutlet weak var NewGoalTextField: NSLayoutConstraint!
+    @IBOutlet weak var newGoalInput: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +21,16 @@ class UpdateViewController: UIViewController {
     
 
     @IBAction func toUpdateBtn(_ sender: Any) {
-        //let query = PFQuery(className:"posts")
+        let currentUser = PFUser.current()!
+        
+        currentUser["goal"] = Int(newGoalInput.text ?? "0") ?? 0
+    
         dismiss(animated: true, completion: nil  )
     }
+    
+    
+    
+    
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: false, completion: nil  )
     }

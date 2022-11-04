@@ -16,18 +16,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var makeLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
-    
-    
-    
-    
+    @IBOutlet weak var emissionLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-//        getVehicleMakes()
+                
         let currentUser = PFUser.current()
         makeLabel.text = currentUser?["make"] as! String
         modelLabel.text = currentUser?["model"] as! String
@@ -35,27 +31,34 @@ class HomeViewController: UIViewController {
         
     }
     
-    
-    // what I need to create:
-    // elements in storyboard
-    // function on save button
-    // 
-    
     @IBAction func onEmissionSubmit(_ sender: Any) {
-//        let date = datePicked.date
-//        let distance = distanceTraveledInput.text!
+        let date = datePicked.date
 
         // calculate emission based on distance & vehicle
+        let distance = Int(distanceTraveledInput.text ?? "0") ?? 0
+        
+        getVehicleEmission(distance: distance) { emission in
+            print("Emission is \(emission)")
+            self.emissionLabel.text = emission
+            
+            
+        // save emission event to parse database
+        let vehicleEmission = PFObject(className: "vehicleEmission")
+        vehicleEmission["owner"] = PFUser.current()
+        vehicleEmission["emission"] = emission
+        vehicleEmission["distanceTraveled"] = distance
+        vehicleEmission["date"] = date
+            
+        vehicleEmission.saveInBackground{ (succeeded, error) in
+            if (succeeded) {
+                print("Vehicle emission saved")
+            } else {
+                print("Object not saved")
+            }
+        }
+            
+    }
         print("Pressed Submit")
-//        getVehicleModel()
-        
-        
-        // create parse table for emissionsVehicle
-//        let vehicleEmission = PFObject(className: "vehicleEmission")
-//        vehicleEmission["userId"] =
-//        vehicleEmission["vehicleId"] =
-//        vehicleEmission["distance"] =
-//        vehicleEmission["userId"] =
     
     }
     

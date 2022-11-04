@@ -32,8 +32,8 @@ class SignUpViewController: UIViewController {
         user["make"] = makeField.text
         user["model"] = modelField.text
         user["year"] = yearField.text
-        user["limit"] = limitField.text
-        
+        user["goal"] = Int(limitField.text ?? "0") ?? 0
+
         user.signUpInBackground { (success, error) in
             if success {
                 self.performSegue(withIdentifier: "loginSegue2", sender: nil)
