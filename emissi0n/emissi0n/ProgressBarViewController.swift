@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class ProgressBarViewController: UIViewController {
 
@@ -26,7 +27,9 @@ class ProgressBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        limit = 400
+        let currentUser = PFUser.current()!
+        
+        limit = currentUser["goal"] as! Int
         total = 300
             
         createCircularProgressBar(limit: CGFloat(limit),total: CGFloat(total))

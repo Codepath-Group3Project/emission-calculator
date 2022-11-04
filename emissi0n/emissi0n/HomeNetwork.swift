@@ -1,4 +1,34 @@
 import Foundation
+import Alamofire
+
+func getVehicleEmission(distance: Int, completion: @escaping (String) -> Void) {
+    let apiKey = "Bearer ZPJKM20ZXW4FWJJGJ4TDV2GSCN6M"
+    let url = URL(string: "https://beta3.api.climatiq.io/estimate")!
+    let params: [String: Any] = [
+        "emission_factor": ["activity_id":"passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"],
+        "parameters": ["distance": distance,
+                       "distance_unit": "mi"]]
+
+    let headers: HTTPHeaders = ["Content-Type": "application/json","authorization": apiKey]
+    let configuration = URLSessionConfiguration.default
+    configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+    let emissionJSON = AF.request("https://beta3.api.climatiq.io/estimate", method: .post, parameters: params as? Parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in switch response.result {
+    case .success:
+        if let json = response.value as? [String:Any] {
+            
+//            print(json)
+
+            let emission = String(describing: json["co2e"]!)
+            completion(emission)
+//            return emission
+        }
+    case .failure(let error):
+        print(error)
+//        completion(.failure(error))
+        }
+    }
+}
+
 
 
 func getVehicleMakes() {
