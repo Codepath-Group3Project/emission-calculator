@@ -78,5 +78,18 @@ class ProgressBarViewController: UIViewController {
     @IBAction func updateButton(_ sender: Any) {
         self.performSegue(withIdentifier: "updateSegue", sender: nil)
     }
+    
+    
+    @IBAction func onLogoutButtotn(_ sender: Any) {
+        PFUser.logOut()
         
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let progressBarViewController = main.instantiateViewController(identifier: "ProgressBarViewController")
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
+        
+        delegate.window?.rootViewController = progressBarViewController
+        
+    }
+    
 }

@@ -12,7 +12,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SignInViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SignInViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Distance traveled in miles" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="M23-P8-UNZ">
-                                <rect key="frame" x="55" y="232" width="280" height="34"/>
+                                <rect key="frame" x="55" y="264" width="280" height="34"/>
                                 <color key="tintColor" systemColor="tintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="9D8-qK-VlC"/>
@@ -135,16 +135,16 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="vbS-cf-Zve">
-                                <rect key="frame" x="104" y="187" width="320" height="41"/>
+                                <rect key="frame" x="104" y="219" width="320" height="41"/>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQO-Nb-wLj">
-                                <rect key="frame" x="55" y="197" width="41" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQO-Nb-wLj">
+                                <rect key="frame" x="55" y="229" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHP-9F-tLm">
-                                <rect key="frame" x="72" y="274" width="246" height="55"/>
+                                <rect key="frame" x="72" y="306" width="246" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="246" id="cjj-wS-KOJ"/>
                                     <constraint firstAttribute="height" constant="55" id="hFy-SU-9Zb"/>
@@ -158,40 +158,40 @@
                                     <action selector="onEmissionSubmit:" destination="age-ob-qW8" eventType="touchUpInside" id="EBx-1V-Cjb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sou-Ou-4mf">
-                                <rect key="frame" x="55" y="158" width="51" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sou-Ou-4mf">
+                                <rect key="frame" x="55" y="190" width="51" height="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5h-6i-iWR">
-                                <rect key="frame" x="112" y="158" width="59" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5h-6i-iWR">
+                                <rect key="frame" x="112" y="190" width="59" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDk-wY-kbI">
-                                <rect key="frame" x="177" y="158" width="42" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDk-wY-kbI">
+                                <rect key="frame" x="177" y="190" width="42" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ8-33-5mG">
-                                <rect key="frame" x="55.000000000000014" y="74.666666666666671" width="149.33333333333337" height="38.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ8-33-5mG">
+                                <rect key="frame" x="55" y="107" width="149.33333333333337" height="38.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <color key="textColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Most recent emission:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWr-tE-jzT">
-                                <rect key="frame" x="55" y="393" width="168" height="21"/>
+                                <rect key="frame" x="55" y="425" width="168" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="co2e" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kq-Ek-Dxw">
-                                <rect key="frame" x="243" y="393" width="75" height="21"/>
+                                <rect key="frame" x="243" y="425" width="75" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -226,7 +226,14 @@
                             <constraint firstItem="M23-P8-UNZ" firstAttribute="top" secondItem="vbS-cf-Zve" secondAttribute="bottom" constant="2" id="yV4-4C-PIE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="r5t-gL-cck"/>
+                    <navigationItem key="navigationItem" id="r5t-gL-cck">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="LIN-h8-ijF">
+                            <color key="tintColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="onLogoutButton:" destination="age-ob-qW8" id="g9i-G7-WMn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="datePicked" destination="vbS-cf-Zve" id="JXR-06-FxR"/>
                         <outlet property="distanceTraveledInput" destination="M23-P8-UNZ" id="WIc-h1-Rw3"/>
@@ -402,7 +409,7 @@
         <!--Calculator-->
         <scene sceneID="Lmw-ep-AUL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="PZT-kJ-hBL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="PZT-kJ-hBL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calculator" image="calc" selectedImage="tinywow_calculator (1)_7602785" id="wcp-vC-hvy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fmb-f4-DEE">
@@ -418,7 +425,7 @@
             </objects>
             <point key="canvasLocation" x="114" y="92"/>
         </scene>
-        <!--Progress-->
+        <!--Progress Bar View Controller-->
         <scene sceneID="dwQ-bs-HJI">
             <objects>
                 <viewController id="fdW-bH-JVj" customClass="ProgressBarViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
@@ -429,12 +436,21 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjL-fp-899">
                                 <rect key="frame" x="135.66666666666666" y="609.66666666666663" width="119" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Goal"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Update Goal">
+                                    <color key="baseBackgroundColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="updateButton:" destination="fdW-bH-JVj" eventType="touchUpInside" id="nRj-zt-Aio"/>
                                     <segue destination="MRw-Hc-dIL" kind="presentation" identifier="updateSegue" modalPresentationStyle="fullScreen" id="PFP-bs-biS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yte-kN-JYe">
+                                <rect key="frame" x="66" y="106.99999999999989" width="129" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <color key="textColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LSn-pN-4lS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -443,7 +459,16 @@
                             <constraint firstAttribute="bottom" secondItem="qjL-fp-899" secondAttribute="bottom" constant="200" id="WYG-Ms-vu5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Progress" id="MVU-FM-rDU"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="MVU-FM-rDU">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="J8I-s7-w7g">
+                            <color key="tintColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="onLogoutButtotn:" destination="fdW-bH-JVj" id="7GT-zW-Mxb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkm-av-0UE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -498,7 +523,7 @@
         <!--Progress-->
         <scene sceneID="xHH-NV-Yp3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mLU-w7-z1s" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProgressBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="mLU-w7-z1s" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Progress" selectedImage="tinywow_stats_7602694" id="Yn1-hu-Jsd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="eZf-pT-eQW">
@@ -553,7 +578,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tu9-5t-pJL"/>
+        <segue reference="sdE-Uh-r8j"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calc" width="128" height="128"/>

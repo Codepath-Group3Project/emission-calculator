@@ -8,9 +8,11 @@
 
 import UIKit
 import Parse
+import AlamofireImage
+
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var datePicked: UIDatePicker!
     @IBOutlet weak var distanceTraveledInput: UITextField!
     @IBOutlet weak var makeLabel: UILabel!
@@ -21,9 +23,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-                
+        
         let currentUser = PFUser.current()
         makeLabel.text = currentUser?["make"] as! String
         modelLabel.text = currentUser?["model"] as! String
@@ -33,7 +35,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func onEmissionSubmit(_ sender: Any) {
         let date = datePicked.date
-
+        
         // calculate emission based on distance & vehicle
         let distance = Int(distanceTraveledInput.text ?? "0") ?? 0
         
@@ -42,34 +44,44 @@ class HomeViewController: UIViewController {
             self.emissionLabel.text = emission
             
             
-        // save emission event to parse database
-        let vehicleEmission = PFObject(className: "vehicleEmission")
-        vehicleEmission["owner"] = PFUser.current()
-        vehicleEmission["emission"] = emission
-        vehicleEmission["distanceTraveled"] = distance
-        vehicleEmission["date"] = date
+            // save emission event to parse database
+            let vehicleEmission = PFObject(className: "vehicleEmission")
+            vehicleEmission["owner"] = PFUser.current()
+            vehicleEmission["emission"] = emission
+            vehicleEmission["distanceTraveled"] = distance
+            vehicleEmission["date"] = date
             
-        vehicleEmission.saveInBackground{ (succeeded, error) in
-            if (succeeded) {
-                print("Vehicle emission saved")
-            } else {
-                print("Object not saved")
+            vehicleEmission.saveInBackground{ (succeeded, error) in
+                if (succeeded) {
+                    print("Vehicle emission saved")
+                } else {
+                    print("Object not saved")
+                }
             }
-        }
             
-    }
+        }
         print("Pressed Submit")
-    
+        
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    @IBAction func onLogoutButton(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let signInViewController = main.instantiateViewController(identifier: "SignInViewController")
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
+        
+        delegate.window?.rootViewController = signInViewController
     }
-    */
-
 }
