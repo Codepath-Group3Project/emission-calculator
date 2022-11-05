@@ -22,6 +22,28 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        let myColor = UIColor.black
+        usernameField.layer.borderColor = myColor.cgColor
+        passwordField.layer.borderColor = myColor.cgColor
+        makeField.layer.borderColor = myColor.cgColor
+        modelField.layer.borderColor = myColor.cgColor
+        yearField.layer.borderColor = myColor.cgColor
+        limitField.layer.borderColor = myColor.cgColor
+        
+        usernameField.layer.borderWidth = 1.25
+        passwordField.layer.borderWidth = 1.25
+        makeField.layer.borderWidth = 1.25
+        modelField.layer.borderWidth = 1.25
+        yearField.layer.borderWidth = 1.25
+        limitField.layer.borderWidth = 1.25
+        
+        usernameField.layer.cornerRadius = 15
+        passwordField.layer.cornerRadius = 15
+        makeField.layer.cornerRadius = 15
+        modelField.layer.cornerRadius = 15
+        yearField.layer.cornerRadius = 15
+        limitField.layer.cornerRadius = 15
+
     }
     
     

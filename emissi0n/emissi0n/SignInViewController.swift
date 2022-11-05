@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import SwiftUI
 
 class SignInViewController: UIViewController {
 
@@ -17,8 +18,18 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        let myColor = UIColor.black
+        usernameField.layer.borderColor = myColor.cgColor
+        passwordField.layer.borderColor = myColor.cgColor
+        
+        usernameField.layer.borderWidth = 1.25
+        passwordField.layer.borderWidth = 1.25
+        
+        usernameField.layer.cornerRadius = 15
+        passwordField.layer.cornerRadius = 15
+        
     }
     
     @IBAction func onSignIn(_ sender: Any) {
