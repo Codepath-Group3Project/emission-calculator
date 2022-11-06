@@ -41,7 +41,8 @@ class HomeViewController: UIViewController {
         
         getVehicleEmission(distance: distance) { emission in
             print("Emission is \(emission)")
-            self.emissionLabel.text = emission
+            let emission = round(Float(emission ) ?? 0)
+            self.emissionLabel.text = String(emission)
             
             
             // save emission event to parse database
