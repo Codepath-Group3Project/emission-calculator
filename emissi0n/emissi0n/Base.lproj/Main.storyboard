@@ -227,7 +227,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r5t-gL-cck">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="LIN-h8-ijF">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="LIN-h8-ijF">
                             <color key="tintColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="onLogoutButton:" destination="age-ob-qW8" id="g9i-G7-WMn"/>
@@ -494,7 +494,14 @@
                             <constraint firstItem="uF9-Tl-W39" firstAttribute="trailing" secondItem="Who-qN-8eX" secondAttribute="trailing" id="seI-Hd-L4E"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="6LD-E1-0gO"/>
+                    <navigationItem key="navigationItem" title="History" id="6LD-E1-0gO">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Mvn-hY-Vit">
+                            <color key="tintColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="onLogoutButton:" destination="MZ8-cP-sJo" id="cFM-dy-4gW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableVIew" destination="uF9-Tl-W39" id="1O3-GN-JDA"/>
                     </connections>
@@ -539,7 +546,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="MVU-FM-rDU">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="J8I-s7-w7g">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="J8I-s7-w7g">
                             <color key="tintColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="onLogoutButtotn:" destination="fdW-bH-JVj" id="7GT-zW-Mxb"/>

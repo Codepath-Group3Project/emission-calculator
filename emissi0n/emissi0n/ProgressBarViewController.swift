@@ -87,11 +87,11 @@ class ProgressBarViewController: UIViewController {
         PFUser.logOut()
         
         let main = UIStoryboard(name: "Main", bundle: nil)
-        let progressBarViewController = main.instantiateViewController(identifier: "ProgressBarViewController")
+        let signInViewController = main.instantiateViewController(identifier: "SignInViewController")
         
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
         
-        delegate.window?.rootViewController = progressBarViewController
+        delegate.window?.rootViewController = signInViewController
         
     }
     
