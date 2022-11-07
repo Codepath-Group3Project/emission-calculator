@@ -227,7 +227,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r5t-gL-cck">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="LIN-h8-ijF">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="LIN-h8-ijF">
                             <color key="tintColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="onLogoutButton:" destination="age-ob-qW8" id="g9i-G7-WMn"/>
@@ -539,7 +539,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="MVU-FM-rDU">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="J8I-s7-w7g">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="J8I-s7-w7g">
                             <color key="tintColor" red="0.46666666670000001" green="0.73333333329999995" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="onLogoutButtotn:" destination="fdW-bH-JVj" id="7GT-zW-Mxb"/>
@@ -665,6 +665,16 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="lvD-9T-x5a">
                         <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.52549022440000004" green="0.7254902124" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.52549022440000004" green="0.7254902124" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.52549022440000004" green="0.7254902124" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textShadowColor" red="0.52549022440000004" green="0.7254902124" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.52549022440000004" green="0.7254902124" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textShadowColor" red="0.52549022440000004" green="0.7254902124" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
