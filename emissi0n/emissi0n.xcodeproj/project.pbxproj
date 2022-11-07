@@ -16,6 +16,7 @@
 		9379ACD8EC429D79FB35624F /* Pods_emissi0n.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5817AD4B65EA1D032A00BF43 /* Pods_emissi0n.framework */; };
 		BE15DF1B2918897C00390EC5 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15DF1A2918897C00390EC5 /* HistoryTableViewCell.swift */; };
 		BE15DF1D29188CDC00390EC5 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15DF1C29188CDC00390EC5 /* HistoryViewController.swift */; };
+		BE15DF1F2918C81000390EC5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15DF1E2918C81000390EC5 /* Color.swift */; };
 		BE380E4F29133C0600A0D7DB /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE380E4E29133C0600A0D7DB /* ProgressBarViewController.swift */; };
 		BE71987D291356CC00EDFC21 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71987C291356CC00EDFC21 /* UpdateViewController.swift */; };
 		C892F5C12909A96200E5D085 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C892F5C02909A96200E5D085 /* SignUpViewController.swift */; };
@@ -36,6 +37,7 @@
 		5817AD4B65EA1D032A00BF43 /* Pods_emissi0n.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emissi0n.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15DF1A2918897C00390EC5 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BE15DF1C29188CDC00390EC5 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		BE15DF1E2918C81000390EC5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BE380E4E29133C0600A0D7DB /* ProgressBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewController.swift; sourceTree = "<group>"; };
 		BE71987C291356CC00EDFC21 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		C892F5C02909A96200E5D085 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				BE71987C291356CC00EDFC21 /* UpdateViewController.swift */,
 				BE15DF1A2918897C00390EC5 /* HistoryTableViewCell.swift */,
 				BE15DF1C29188CDC00390EC5 /* HistoryViewController.swift */,
+				BE15DF1E2918C81000390EC5 /* Color.swift */,
 			);
 			path = emissi0n;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				2DBB228F2908CF2600011D2B /* AppDelegate.swift in Sources */,
 				2DD51D17290B393300AEA0C9 /* HomeNetwork.swift in Sources */,
+				BE15DF1F2918C81000390EC5 /* Color.swift in Sources */,
 				2DBB22912908CF2600011D2B /* SceneDelegate.swift in Sources */,
 				BE15DF1D29188CDC00390EC5 /* HistoryViewController.swift in Sources */,
 				C8D8836629098E89008BD8D6 /* SignInViewController.swift in Sources */,
