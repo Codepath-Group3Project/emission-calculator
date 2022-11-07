@@ -244,7 +244,7 @@
         <scene sceneID="CxU-nm-3Ng">
             <objects>
                 <viewController id="ueo-P4-V1b" customClass="SignUpViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="3Kd-R8-gJf">
+                    <view key="view" contentMode="scaleToFill" id="3Kd-R8-gJf">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

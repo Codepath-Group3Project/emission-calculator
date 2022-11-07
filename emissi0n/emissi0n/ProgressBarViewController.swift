@@ -20,17 +20,13 @@ class ProgressBarViewController: UIViewController {
     let trackLayer = CAShapeLayer()
     var limit = 0.0
     var total = 0.0
+    var totalEm = 0
         
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getLimTotal()
-        createCircularProgressBar(limit: CGFloat(limit),total: CGFloat(total))
-        
-        print("TOTALLLLLLLLLLLL")
-        print(total)
-        
         totalLbl.text = String(total)
         limitLbl.text = String(limit)
         let mytime = Date()
@@ -64,11 +60,18 @@ class ProgressBarViewController: UIViewController {
                     let em = object["emission"] ?? "0"
                     let floatEm = Int(round(Float(String(describing: em))!))
                     self.total += Double(floatEm)
+                    self.totalEm += floatEm
                 }
+                
+                self.limitLbl.text = String(self.limit)
+                self.totalLbl.text = String(self.totalEm)
+                self.createCircularProgressBar(limit: CGFloat(self.limit),total: CGFloat(self.total))
             }
+            
         }
         print("PRIIIIIIIIIIIIIINTING TOTALLLLLLLLLLL")
         print (total)
+        print(totalEm)
 
     }
         
