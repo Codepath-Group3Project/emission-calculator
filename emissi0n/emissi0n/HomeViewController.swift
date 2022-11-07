@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var maxEmissionLabel: UILabel!
     
     var emissionArray = [Int]()
+    var emissionTotal = 0
     
     
     override func viewDidLoad() {
@@ -122,6 +123,7 @@ class HomeViewController: UIViewController {
                     // append emission if user is current user
                     if currentUserId == ownerId {
                         self.emissionArray.append(floatEm)
+                        self.emissionTotal += floatEm
                     }
     
 
@@ -130,8 +132,7 @@ class HomeViewController: UIViewController {
                 print(self.emissionArray)
                 self.minEmissionLabel.text = String(self.emissionArray.min()!)
                 self.maxEmissionLabel.text = String(self.emissionArray.max()!)
-
-//                print(mean(self.emissionArray))
+                self.avgEmissionLabel.text = String(self.emissionTotal / self.emissionArray.count)
                 
 
             }
