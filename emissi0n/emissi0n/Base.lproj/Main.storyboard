@@ -519,7 +519,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="updateButton:" destination="fdW-bH-JVj" eventType="touchUpInside" id="uRc-W3-h9r"/>
-                                    <segue destination="cY2-b3-TyO" kind="presentation" modalPresentationStyle="fullScreen" id="EIk-yK-F26"/>
+                                    <segue destination="cY2-b3-TyO" kind="presentation" identifier="updateSegue" modalPresentationStyle="fullScreen" id="EIk-yK-F26"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yte-kN-JYe">
