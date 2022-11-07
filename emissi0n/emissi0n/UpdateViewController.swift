@@ -21,11 +21,15 @@ class UpdateViewController: UIViewController {
     
 
     @IBAction func toUpdateBtn(_ sender: Any) {
-        let currentUser = PFUser.current()!
+   
         
-        currentUser["goal"] = Int(newGoalInput.text ?? "0") ?? 0
-    
-        dismiss(animated: true, completion: nil  )
+        if let currentUser = PFUser.current(){
+            currentUser["goal"] = Int(newGoalInput.text ?? "0") ?? 0
+            //set other fields the same way....
+            currentUser.saveInBackground()
+            
+        }
+        dismiss(animated: false, completion: nil)
     }
     
     

@@ -48,7 +48,7 @@ class HomeViewController: UIViewController {
             // save emission event to parse database
             let vehicleEmission = PFObject(className: "vehicleEmission")
             vehicleEmission["owner"] = PFUser.current()
-            vehicleEmission["emission"] = emission
+            vehicleEmission["emission"] = String(emission)
             vehicleEmission["distanceTraveled"] = distance
             vehicleEmission["date"] = date
             
