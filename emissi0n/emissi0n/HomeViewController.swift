@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import AlamofireImage
+import SwiftUI
 
 
 class HomeViewController: UIViewController {
@@ -25,6 +26,11 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        let myColor = Color.ourGreen
+        distanceTraveledInput.layer.borderColor = myColor.cgColor
+        distanceTraveledInput.layer.borderWidth = 1.25
+        distanceTraveledInput.layer.cornerRadius = 10
         
         let currentUser = PFUser.current()
         makeLabel.text = currentUser?["make"] as! String
@@ -61,6 +67,8 @@ class HomeViewController: UIViewController {
             }
             
         }
+        distanceTraveledInput.text = ""
+        
         print("Pressed Submit")
         
     }

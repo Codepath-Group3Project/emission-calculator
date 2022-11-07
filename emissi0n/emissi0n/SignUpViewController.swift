@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let myColor = UIColor.black
+        let myColor = Color.ourGreen
         usernameField.layer.borderColor = myColor.cgColor
         passwordField.layer.borderColor = myColor.cgColor
         makeField.layer.borderColor = myColor.cgColor

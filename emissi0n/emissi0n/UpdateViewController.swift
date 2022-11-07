@@ -7,6 +7,7 @@
 
 import UIKit
 import Parse
+import SwiftUI
 
 class UpdateViewController: UIViewController {
 
@@ -15,6 +16,11 @@ class UpdateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let myColor = Color.ourGreen
+        newGoalInput.layer.borderColor = myColor.cgColor
+        newGoalInput.layer.borderWidth = 1.25
+        newGoalInput.layer.cornerRadius = 10
 
         // Do any additional setup after loading the view.
     }
