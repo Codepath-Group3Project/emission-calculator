@@ -18,19 +18,18 @@ class ProgressBarViewController: UIViewController {
     
     let ProgressLayer = CAShapeLayer()
     let trackLayer = CAShapeLayer()
-    var limit = 0
-    var total = 0
+    var limit = 0.0
+    var total = 0.0
         
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let currentUser = PFUser.current()!
-        limit = currentUser["goal"] as! Int
-        
-        //let query = PFQuery(className:"vehicleEmission")
-        total = 300
+        getLimTotal()
         createCircularProgressBar(limit: CGFloat(limit),total: CGFloat(total))
+        
+        print("TOTALLLLLLLLLLLL")
+        print(total)
         
         totalLbl.text = String(total)
         limitLbl.text = String(limit)
@@ -42,6 +41,35 @@ class ProgressBarViewController: UIViewController {
         let firstWord = month.components(separatedBy: " ").first
         monthLbl.text = (firstWord!) // "What"
         
+    }
+    
+    func getLimTotal(){
+        
+        let currentUser = PFUser.current()!
+        limit = Double(currentUser["goal"] as! Int)
+        
+        let query = PFQuery(className:"vehicleEmission")
+        query.whereKey("owner", equalTo: currentUser)
+        
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+            if let error = error {
+                // Log details of the failure
+                print(error.localizedDescription)
+            } else if let objects = objects {
+                // The find succeeded.
+                print("Successfully retrieved \(objects.count) scores2.")
+                // Do something with the found objects
+                for object in objects {
+                    
+                    let em = object["emission"] ?? "0"
+                    let floatEm = Int(round(Float(String(describing: em))!))
+                    self.total += Double(floatEm)
+                }
+            }
+        }
+        print("PRIIIIIIIIIIIIIINTING TOTALLLLLLLLLLL")
+        print (total)
+
     }
         
     func createCircularProgressBar(limit:CGFloat, total:CGFloat){
@@ -66,7 +94,7 @@ class ProgressBarViewController: UIViewController {
         ProgressLayer.fillColor = UIColor.clear.cgColor
         ProgressLayer.lineCap = CAShapeLayerLineCap.round
             
-        ProgressLayer.strokeEnd = 0.8 - 0.13
+        ProgressLayer.strokeEnd = total/limit - 0.13
             
         if (ProgressLayer.strokeEnd > 0.7 ){
             ProgressLayer.strokeColor = Color.ourRed.cgColor
@@ -79,6 +107,8 @@ class ProgressBarViewController: UIViewController {
         view.layer.addSublayer(ProgressLayer)
             
     }
+    
+    
     
     @IBAction func updateButton(_ sender: Any) {
         self.performSegue(withIdentifier: "updateSegue", sender: nil)
