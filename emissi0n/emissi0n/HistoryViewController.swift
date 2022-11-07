@@ -23,7 +23,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        let currentUser = PFUser.current()!
         let query = PFQuery(className:"vehicleEmission")
+        query.whereKey("owner", equalTo: currentUser)
         query.includeKeys(["emission","distanceTraveled", "date"])
         
         query.findObjectsInBackground{(emissions, error) in
