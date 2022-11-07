@@ -308,10 +308,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="avgEmissionLabel" destination="tQp-0p-FTK" id="03a-1J-pBa"/>
                         <outlet property="datePicked" destination="vbS-cf-Zve" id="JXR-06-FxR"/>
                         <outlet property="distanceTraveledInput" destination="M23-P8-UNZ" id="WIc-h1-Rw3"/>
                         <outlet property="emissionLabel" destination="8kq-Ek-Dxw" id="TLo-sb-stZ"/>
                         <outlet property="makeLabel" destination="sou-Ou-4mf" id="FkF-zv-as8"/>
+                        <outlet property="maxEmissionLabel" destination="Di3-sw-okc" id="fcQ-2h-XrF"/>
+                        <outlet property="minEmissionLabel" destination="Zka-Qb-zvV" id="dWe-0X-ltO"/>
                         <outlet property="modelLabel" destination="C5h-6i-iWR" id="1Qz-jb-hMa"/>
                         <outlet property="yearLabel" destination="FDk-wY-kbI" id="z0C-LN-270"/>
                     </connections>

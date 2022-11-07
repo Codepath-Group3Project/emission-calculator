@@ -12,6 +12,16 @@ import AlamofireImage
 import SwiftUI
 
 
+extension Calendar {
+    static let gregorian = Calendar(identifier: .gregorian)
+}
+
+extension Date {
+    func startOfWeek(using calendar: Calendar = .gregorian) -> Date {
+        calendar.dateComponents([.calendar, .yearForWeekOfYear, .weekOfYear], from: self).date!
+    }
+}
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var datePicked: UIDatePicker!
@@ -20,6 +30,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var emissionLabel: UILabel!
+    @IBOutlet weak var avgEmissionLabel: UILabel!
+    @IBOutlet weak var minEmissionLabel: UILabel!
+    @IBOutlet weak var maxEmissionLabel: UILabel!
+    
+    var emissionArray = [Int]()
     
     
     override func viewDidLoad() {
@@ -36,6 +51,9 @@ class HomeViewController: UIViewController {
         makeLabel.text = currentUser?["make"] as! String
         modelLabel.text = currentUser?["model"] as! String
         yearLabel.text = currentUser?["year"] as! String
+        
+        
+        populateWeeklyDashboard()
         
     }
     
@@ -74,6 +92,53 @@ class HomeViewController: UIViewController {
         
     }
     
+
+    
+    func populateWeeklyDashboard() {
+        let currentUser = PFUser.current()!
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let yesterday = formatter.date(from: "2022/11/06")!
+        
+        let query = PFQuery(className:"vehicleEmission")
+        query.whereKey("date", greaterThan: yesterday)
+        
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+            if let error = error {
+                // Log details of the failure
+                print(error.localizedDescription)
+            } else if let objects = objects {
+                // The find succeeded.
+                print("Successfully retrieved \(objects.count) scores2.")
+                // Do something with the found objects
+                for object in objects {
+                    let owner = object["owner"]!
+                    let currentUserId = currentUser.objectId
+                    let ownerId = (owner as AnyObject).objectId
+                    let em = object["emission"] ?? "0"
+                    let floatEm = Int(round(Float(String(describing: em))!))
+
+                    // append emission if user is current user
+                    if currentUserId == ownerId {
+                        self.emissionArray.append(floatEm)
+                    }
+    
+
+                }
+                
+                print(self.emissionArray)
+                self.minEmissionLabel.text = String(self.emissionArray.min()!)
+                self.maxEmissionLabel.text = String(self.emissionArray.max()!)
+
+//                print(mean(self.emissionArray))
+                
+
+            }
+            
+        }
+        
+    }
     /*
      // MARK: - Navigation
      
