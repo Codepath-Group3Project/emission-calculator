@@ -47,7 +47,8 @@ class HomeViewController: UIViewController {
         
         getVehicleEmission(distance: distance) { emission in
             print("Emission is \(emission)")
-            let emission = round(Float(emission ) ?? 0)
+            let emission = Int(round(Float(emission) ?? 0))
+            
             self.emissionLabel.text = String(emission)
             
             

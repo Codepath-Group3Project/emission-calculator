@@ -42,19 +42,20 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let emission = emissions[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell") as! HistoryTableViewCell
         
-        //let em = emission["emission"] ?? "0"
-        //if case let em != nil
-       // {
-       //   let em = "\(em)"
-      //  }else{
-       //     let em = "0"
-       // }
+        // convert emission to float
+        let em = emission["emission"] ?? "0"
+        let floatEm = Int(round(Float(String(describing: em))!))
         
         
-        //print(em)
-        //cell.date.text = emission
-        //cell.distance.text = emission["distanceTraveled"] as? String
-        //cell.emission.text = String(em)
+        // convert date to text
+        let df = DateFormatter()
+        df.dateFormat = "MM/dd/yyyy"
+        let date = df.string(from: emission["date"] as! Date)
+        
+        // assign values to labels
+        cell.date.text = date as! String
+        cell.distance.text = String(describing: emission["distanceTraveled"] as! NSNumber) + " miles"
+        cell.emission.text = String(describing: floatEm)
         
         return cell
     }
