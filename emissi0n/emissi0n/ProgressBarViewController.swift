@@ -28,8 +28,11 @@ class ProgressBarViewController: UIViewController {
         super.viewDidLoad()
         
         let currentUser = PFUser.current()!
-        
         limit = currentUser["goal"] as! Int
+        
+        //let query = PFQuery(className:"vehicleEmission")
+        
+        
         total = 300
             
         createCircularProgressBar(limit: CGFloat(limit),total: CGFloat(total))
