@@ -18,6 +18,7 @@ class ProgressBarViewController: UIViewController {
     
     let ProgressLayer = CAShapeLayer()
     let trackLayer = CAShapeLayer()
+    
     var limit = 0.0
     var total = 0.0
     var totalEm = 0
@@ -60,17 +61,17 @@ class ProgressBarViewController: UIViewController {
                     
                     let em = object["emission"] ?? "0"
                     let floatEm = Int(round(Float(String(describing: em))!))
-                    self.total += Double(floatEm)
+                    //self.total += Double(floatEm)
                     self.totalEm += floatEm
                 }
                 
                 self.limitLbl.text = String(format: "%.0f", self.limit)
                 self.totalLbl.text = String(self.totalEm)
-                self.createCircularProgressBar(limit: CGFloat(self.limit),total: CGFloat(self.total))
+                self.createCircularProgressBar(limit: CGFloat(self.limit),total: CGFloat(self.totalEm))
             }
             
         }
-        print("PRIIIIIIIIIIIIIINTING TOTALLLLLLLLLLL")
+        
         print (total)
         print(totalEm)
 
@@ -79,26 +80,26 @@ class ProgressBarViewController: UIViewController {
     func createCircularProgressBar(limit:CGFloat, total:CGFloat){
         let center =  view.center
             
-            // create my track layer
             
-            
+        //create the track layer
         let circularPath = UIBezierPath(arcCenter: center, radius: 120, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        
         trackLayer.path = circularPath.cgPath
-            
         trackLayer.strokeColor = Color.chromeWhite.cgColor
         trackLayer.lineWidth = 12
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = CAShapeLayerLineCap.round
         view.layer.addSublayer(trackLayer)
-            
+        
+        
+        //create progress layer
         ProgressLayer.path = circularPath.cgPath
-            
         ProgressLayer.strokeColor = Color.ourGreen.cgColor
         ProgressLayer.lineWidth = 12
         ProgressLayer.fillColor = UIColor.clear.cgColor
         ProgressLayer.lineCap = CAShapeLayerLineCap.round
-            
-        ProgressLayer.strokeEnd = total/limit - 0.13
+        
+        ProgressLayer.strokeEnd = CGFloat(totalEm)/limit - 0.1
             
         if (ProgressLayer.strokeEnd > 0.7 ){
             ProgressLayer.strokeColor = Color.ourRed.cgColor
@@ -106,6 +107,8 @@ class ProgressBarViewController: UIViewController {
             ProgressLayer.strokeColor = Color.ourOrange.cgColor
         }else if (ProgressLayer.strokeEnd > 0.4){
             ProgressLayer.strokeColor = Color.ourYellow.cgColor
+        } else {
+            ProgressLayer.strokeColor = Color.ourGreen.cgColor
         }
             
         view.layer.addSublayer(ProgressLayer)
