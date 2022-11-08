@@ -147,10 +147,15 @@ class HomeViewController: UIViewController {
 
                 }
                 
+                var avgEmission = 0
+                if self.emissionArray.count != 0 {
+                    avgEmission = self.emissionTotal / self.emissionArray.count
+                }
+                
                 print(self.emissionArray)
-                self.minEmissionLabel.text = String(self.emissionArray.min()!)
-                self.maxEmissionLabel.text = String(self.emissionArray.max()!)
-                self.avgEmissionLabel.text = String(self.emissionTotal / self.emissionArray.count)
+                self.minEmissionLabel.text = String(self.emissionArray.min() ?? 0)
+                self.maxEmissionLabel.text = String(self.emissionArray.max() ?? 0)
+                self.avgEmissionLabel.text = String(avgEmission)
                 
 
             }

@@ -329,7 +329,7 @@
         <scene sceneID="CxU-nm-3Ng">
             <objects>
                 <viewController id="ueo-P4-V1b" customClass="SignUpViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3Kd-R8-gJf">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="3Kd-R8-gJf">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -533,14 +533,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op4-w2-Gf0">
-                                                    <rect key="frame" x="338" y="15.666666666666664" width="32" height="34"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                    <rect key="frame" x="347" y="20.666666666666671" width="23" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="81" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E20-t0-POK">
-                                                    <rect key="frame" x="301" y="15.666666666666664" width="33" height="34"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                    <rect key="frame" x="320" y="20.666666666666671" width="23" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -619,7 +619,7 @@
                                 <connections>
                                     <action selector="onEmissionSubmit:" destination="age-ob-qW8" eventType="touchUpInside" id="35w-S9-bX2"/>
                                     <action selector="updateButton:" destination="fdW-bH-JVj" eventType="touchUpInside" id="1Ar-nv-ARU"/>
-                                    <segue destination="cY2-b3-TyO" kind="presentation" identifier="updateSegue" modalPresentationStyle="fullScreen" id="iye-E8-4iU"/>
+                                    <segue destination="cY2-b3-TyO" kind="presentation" identifier="updateSegue" modalPresentationStyle="automatic" id="iye-E8-4iU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-Ce-poY">
@@ -689,11 +689,11 @@
             <objects>
                 <viewController id="we1-8v-uIC" customClass="UpdateViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BG0-bo-lte">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5L-2E-G6e">
-                                <rect key="frame" x="16" y="399.66666666666669" width="358" height="45"/>
+                                <rect key="frame" x="16" y="372.66666666666669" width="358" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="tqp-Zy-4A6"/>
                                 </constraints>
@@ -701,7 +701,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxC-e3-Esq">
-                                <rect key="frame" x="72" y="464.66666666666669" width="246" height="55.000000000000057"/>
+                                <rect key="frame" x="72" y="437.66666666666669" width="246" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Pqk-GM-fI1"/>
                                     <constraint firstAttribute="width" constant="246" id="wCI-7h-MRG"/>
@@ -729,7 +729,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iU5-ZE-XLS">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="sFR-N2-iTV">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="sFR-N2-iTV">
                             <color key="tintColor" red="0.52549022440000004" green="0.7254902124" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="backButton:" destination="we1-8v-uIC" id="tI8-Az-8v1"/>
@@ -772,7 +772,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cY2-b3-TyO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lJS-cO-AJM">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -835,7 +835,6 @@
         <segue reference="Tu9-5t-pJL"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="emiss0n-logo" width="269.33334350585938" height="202.66667175292969"/>
         <image name="icons8-calculator-24" width="24" height="24"/>
         <image name="icons8-checkmark-24" width="24" height="24"/>
