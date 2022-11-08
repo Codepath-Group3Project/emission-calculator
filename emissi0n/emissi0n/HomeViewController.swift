@@ -33,10 +33,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var avgEmissionLabel: UILabel!
     @IBOutlet weak var minEmissionLabel: UILabel!
     @IBOutlet weak var maxEmissionLabel: UILabel!
+    @IBOutlet weak var recentEmissionText: UILabel!
+    @IBOutlet weak var recentEmissionUnits: UILabel!
+    
     
     var emissionArray = [Int]()
     var emissionTotal = 0
+    var isHidden = true
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +57,12 @@ class HomeViewController: UIViewController {
         makeLabel.text = currentUser?["make"] as! String
         modelLabel.text = currentUser?["model"] as! String
         yearLabel.text = currentUser?["year"] as! String
+        
+        // hide recent emission until button is pressed
+        recentEmissionText.isHidden = isHidden
+        emissionLabel.isHidden = isHidden
+        recentEmissionUnits.isHidden = isHidden
+        
         
         
         populateWeeklyDashboard()
@@ -88,6 +99,13 @@ class HomeViewController: UIViewController {
             
         }
         distanceTraveledInput.text = ""
+        
+        // display recent emission
+        isHidden = false
+        recentEmissionText.isHidden = isHidden
+        emissionLabel.isHidden = isHidden
+        recentEmissionUnits.isHidden = isHidden
+        
         
         print("Pressed Submit")
         

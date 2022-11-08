@@ -316,6 +316,8 @@
                         <outlet property="maxEmissionLabel" destination="Di3-sw-okc" id="fcQ-2h-XrF"/>
                         <outlet property="minEmissionLabel" destination="Zka-Qb-zvV" id="dWe-0X-ltO"/>
                         <outlet property="modelLabel" destination="C5h-6i-iWR" id="1Qz-jb-hMa"/>
+                        <outlet property="recentEmissionText" destination="xWr-tE-jzT" id="dKZ-Bv-c9F"/>
+                        <outlet property="recentEmissionUnits" destination="AJb-ak-9OH" id="UH4-k9-aEB"/>
                         <outlet property="yearLabel" destination="FDk-wY-kbI" id="z0C-LN-270"/>
                     </connections>
                 </viewController>
@@ -327,7 +329,7 @@
         <scene sceneID="CxU-nm-3Ng">
             <objects>
                 <viewController id="ueo-P4-V1b" customClass="SignUpViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="3Kd-R8-gJf">
+                    <view key="view" contentMode="scaleToFill" id="3Kd-R8-gJf">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
