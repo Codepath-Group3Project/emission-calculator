@@ -42,7 +42,8 @@ class ProgressBarViewController: UIViewController {
     func getLimTotal(){
         
         let currentUser = PFUser.current()!
-        limit = Double(currentUser["goal"] as! Int)
+//        limit = Int(round(Float(currentUser["goal"])!))
+        limit = round(Double(currentUser["goal"] as! Int))
         
         let query = PFQuery(className:"vehicleEmission")
         query.whereKey("owner", equalTo: currentUser)
@@ -63,7 +64,7 @@ class ProgressBarViewController: UIViewController {
                     self.totalEm += floatEm
                 }
                 
-                self.limitLbl.text = String(self.limit)
+                self.limitLbl.text = String(format: "%.0f", self.limit)
                 self.totalLbl.text = String(self.totalEm)
                 self.createCircularProgressBar(limit: CGFloat(self.limit),total: CGFloat(self.total))
             }
