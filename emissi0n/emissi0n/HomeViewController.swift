@@ -66,6 +66,7 @@ class HomeViewController: UIViewController {
         
         
         populateWeeklyDashboard()
+//        deleteZeroEmissions()
         
     }
     
@@ -116,6 +117,7 @@ class HomeViewController: UIViewController {
     func populateWeeklyDashboard() {
         let currentUser = PFUser.current()!
         
+        // set date formatter
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         let yesterday = formatter.date(from: "2022/11/06")!
@@ -152,7 +154,7 @@ class HomeViewController: UIViewController {
                     avgEmission = self.emissionTotal / self.emissionArray.count
                 }
                 
-                print(self.emissionArray)
+//                print(self.emissionArray)
                 self.minEmissionLabel.text = String(self.emissionArray.min() ?? 0)
                 self.maxEmissionLabel.text = String(self.emissionArray.max() ?? 0)
                 self.avgEmissionLabel.text = String(avgEmission)
@@ -163,6 +165,34 @@ class HomeViewController: UIViewController {
         }
         
     }
+    
+    
+    func deleteZeroEmissions() {
+        let currentUser = PFUser.current()!
+        
+        let query = PFQuery(className:"vehicleEmission")
+        query.whereKey("emission", equalTo: "0.0")
+        
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+            if let error = error {
+                // Log details of the failure
+                print(error.localizedDescription)
+            } else if let objects = objects {
+                // The find succeeded.
+                print("Successfully retrieved \(objects.count) scores2.")
+                // Do something with the found objects
+                for object in objects {
+                    object.deleteInBackground()
+                    print("Object deleted")
+//                    let em = object["emission"] ?? "0"
+//                    print(em)
+                    }
+            }
+        }
+    }
+        
+   
+    
     /*
      // MARK: - Navigation
      
