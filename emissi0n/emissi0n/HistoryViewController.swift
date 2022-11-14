@@ -28,6 +28,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let query = PFQuery(className:"vehicleEmission")
         query.whereKey("owner", equalTo: currentUser)
         query.includeKeys(["emission","distanceTraveled", "date"])
+        query.order(byDescending: "date")
         
         query.findObjectsInBackground{(emissions, error) in
             if emissions != nil{
