@@ -13,6 +13,7 @@ class UpdateViewController: UIViewController {
 
     @IBOutlet weak var newGoalInput: UITextField!
     
+    var isDismissed: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +29,16 @@ class UpdateViewController: UIViewController {
 
     @IBAction func toUpdateBtn(_ sender: Any) {
    
-        
         if let currentUser = PFUser.current(){
-            currentUser["goal"] = Int(newGoalInput.text ?? currentUser["goal"] as! String) ?? currentUser["goal"]
+            let newLimit = Int(newGoalInput.text ?? currentUser["goal"] as! String) ?? currentUser["goal"]
+            currentUser["goal"] = newLimit
             //set other fields the same way....
             currentUser.saveInBackground()
             
         }
+        
+//        progressBarVC.updateProgressBar()
+        self.isDismissed?()
         dismiss(animated: false, completion: nil)
     }
     

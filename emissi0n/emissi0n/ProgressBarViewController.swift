@@ -9,6 +9,8 @@ import UIKit
 import Parse
 import SwiftUI
 
+var progressBarVC = ProgressBarViewController() 
+
 class ProgressBarViewController: UIViewController {
 
     
@@ -35,6 +37,24 @@ class ProgressBarViewController: UIViewController {
         df.dateFormat = "LLLL, yyyy"
         let date = df.string(from: mytime)
         monthLbl.text = date
+        
+        // attempt to refresh after updating limit variable
+//        self.viewDidLoad()
+//        self.viewWillAppear(true)
+        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateProgressBar()
+    }
+
+    func updateProgressBar() {
+        let currentUser = PFUser.current()!
+        limit = round(Double(currentUser["goal"] as! Int))
+        self.limitLbl.text = String(format: "%.0f", self.limit)
+        self.totalLbl.text = String(self.totalEm)
+        createCircularProgressBar(limit: limit, total: CGFloat(totalEm))
     }
     
     func getLimTotal(){
@@ -112,6 +132,13 @@ class ProgressBarViewController: UIViewController {
             
     }
     
+    
+    // reload data after updating limit
+//    let updateViewController = UpdateViewController()
+//    updateViewController.isDismissed = { [weak self] in
+//       self?.viewDidLoad()()
+//    }
+//    
     
     
     @IBAction func updateButton(_ sender: Any) {
