@@ -37,12 +37,12 @@ class SignUpViewController: UIViewController {
         yearField.layer.borderWidth = 1.25
         limitField.layer.borderWidth = 1.25
         
-        usernameField.layer.cornerRadius = 15
-        passwordField.layer.cornerRadius = 15
-        makeField.layer.cornerRadius = 15
-        modelField.layer.cornerRadius = 15
-        yearField.layer.cornerRadius = 15
-        limitField.layer.cornerRadius = 15
+        usernameField.layer.cornerRadius = 10
+        passwordField.layer.cornerRadius = 10
+        makeField.layer.cornerRadius = 10
+        modelField.layer.cornerRadius = 10
+        yearField.layer.cornerRadius = 10
+        limitField.layer.cornerRadius = 10
 
     }
     

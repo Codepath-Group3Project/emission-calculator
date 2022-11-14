@@ -27,8 +27,8 @@ class SignInViewController: UIViewController {
         usernameField.layer.borderWidth = 1.25
         passwordField.layer.borderWidth = 1.25
         
-        usernameField.layer.cornerRadius = 15
-        passwordField.layer.cornerRadius = 15
+        usernameField.layer.cornerRadius = 10
+        passwordField.layer.cornerRadius = 10
         
     }
     
