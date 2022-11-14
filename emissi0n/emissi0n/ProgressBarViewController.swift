@@ -31,13 +31,10 @@ class ProgressBarViewController: UIViewController {
         totalLbl.text = String(total)
         limitLbl.text = String(limit)
         let mytime = Date()
-        let format = DateFormatter()
-        format.timeStyle = .none
-        format.dateStyle = .long
-        let month = format.string(from: mytime)
-        let firstWord = month.components(separatedBy: " ").first
-        monthLbl.text = (firstWord!) // "What"
-        
+        let df = DateFormatter()
+        df.dateFormat = "LLLL, yyyy"
+        let date = df.string(from: mytime)
+        monthLbl.text = date
     }
     
     func getLimTotal(){

@@ -30,7 +30,7 @@ class UpdateViewController: UIViewController {
    
         
         if let currentUser = PFUser.current(){
-            currentUser["goal"] = Int(newGoalInput.text ?? "0") ?? 0
+            currentUser["goal"] = Int(newGoalInput.text ?? currentUser["goal"] as! String) ?? currentUser["goal"]
             //set other fields the same way....
             currentUser.saveInBackground()
             
