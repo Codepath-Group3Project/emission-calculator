@@ -642,7 +642,7 @@
                                 <connections>
                                     <action selector="onEmissionSubmit:" destination="age-ob-qW8" eventType="touchUpInside" id="35w-S9-bX2"/>
                                     <action selector="updateButton:" destination="fdW-bH-JVj" eventType="touchUpInside" id="1Ar-nv-ARU"/>
-                                    <segue destination="cY2-b3-TyO" kind="presentation" identifier="updateSegue" modalPresentationStyle="automatic" id="iye-E8-4iU"/>
+                                    <segue destination="cY2-b3-TyO" kind="presentation" identifier="updateSegue" modalPresentationStyle="fullScreen" id="iye-E8-4iU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-Ce-poY">
@@ -710,13 +710,13 @@
         <!--Update View Controller-->
         <scene sceneID="sJw-TM-NuF">
             <objects>
-                <viewController id="we1-8v-uIC" customClass="UpdateViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="we1-8v-uIC" customClass="UpdateViewController" customModule="emissi0n" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BG0-bo-lte">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5L-2E-G6e">
-                                <rect key="frame" x="16" y="356.66666666666669" width="343" height="45"/>
+                                <rect key="frame" x="16" y="383.66666666666669" width="343" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="tqp-Zy-4A6"/>
                                 </constraints>
@@ -724,7 +724,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxC-e3-Esq">
-                                <rect key="frame" x="64.666666666666686" y="421.66666666666669" width="246" height="55"/>
+                                <rect key="frame" x="64.666666666666686" y="448.66666666666669" width="246" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Pqk-GM-fI1"/>
                                     <constraint firstAttribute="width" constant="246" id="wCI-7h-MRG"/>
@@ -791,10 +791,10 @@
         <!--Navigation Controller-->
         <scene sceneID="F1X-ss-EI9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cY2-b3-TyO" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="cY2-b3-TyO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lJS-cO-AJM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

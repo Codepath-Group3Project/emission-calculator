@@ -70,6 +70,11 @@ class HomeViewController: UIViewController {
         
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        populateWeeklyDashboard()
+    }
+    
     @IBAction func onEmissionSubmit(_ sender: Any) {
         let date = datePicked.date
         
@@ -106,7 +111,7 @@ class HomeViewController: UIViewController {
         recentEmissionText.isHidden = isHidden
         emissionLabel.isHidden = isHidden
         recentEmissionUnits.isHidden = isHidden
-        
+        populateWeeklyDashboard()
         
         print("Pressed Submit")
         

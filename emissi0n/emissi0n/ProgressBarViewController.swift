@@ -37,21 +37,66 @@ class ProgressBarViewController: UIViewController {
         df.dateFormat = "LLLL, yyyy"
         let date = df.string(from: mytime)
         monthLbl.text = date
-        
+//        updateProgressBar()
         // attempt to refresh after updating limit variable
 //        self.viewDidLoad()
 //        self.viewWillAppear(true)
         
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+////        updateProgressBar()
+//    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        getLimTotal()
         updateProgressBar()
     }
-
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let navigationController = segue.destination as! UINavigationController
+        let something = navigationController.topViewController as! UpdateViewController
+        
+        if segue.identifier == "updateSegue" {
+            something.limitUpdateLabel = limitLbl.text
+            
+        }
+        
+        something.progressVC = self
+    }
+    
     func updateProgressBar() {
         let currentUser = PFUser.current()!
+        let query = PFQuery(className:"user")
+        query.whereKey("owner", equalTo: currentUser)
+        
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+            if let error = error {
+                // Log details of the failure
+                print(error.localizedDescription)
+            } else if let objects = objects {
+                // The find succeeded.
+                print("Successfully retrieved \(objects.count) scores2.")
+                // Do something with the found objects
+                for object in objects {
+
+                    let goal = object["goal"] ?? "0"
+                    self.limitLbl.text = String(describing: goal)
+                }
+                
+            }
+            
+        }
+            
+        
         limit = round(Double(currentUser["goal"] as! Int))
+//        print(limit)
+//        print(self.limit)
+//        print(String(format: "%.0f", self.limit))
         self.limitLbl.text = String(format: "%.0f", self.limit)
         self.totalLbl.text = String(self.totalEm)
         createCircularProgressBar(limit: limit, total: CGFloat(totalEm))
